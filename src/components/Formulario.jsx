@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { getId } from '../utils'
 import Error from './Error'
 
-const Formulario = ({ addGasto }) => {
+const Formulario = ({ setGasto, setCrearGasto }) => {
 	const [name, setName] = useState('')
 	const [cantidad, setCantidad] = useState(0)
 	const [error, setError] = useState(false)
@@ -36,7 +36,8 @@ const Formulario = ({ addGasto }) => {
 
 		// pasar el gasto
 
-		addGasto(gasto)
+		setGasto(gasto)
+		setCrearGasto(true)
 
 		// resetear el form
 
