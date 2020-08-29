@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import propTypes from 'prop-types'
 import { getId } from '../utils'
 import Error from './Error'
 
@@ -84,6 +85,11 @@ const Formulario = ({ setGasto, setCrearGasto }) => {
 			</form>
 		</div>
 	)
+}
+
+Formulario.prototype = {
+	setGasto: propTypes.func.isRequired,
+	setCrearGasto: propTypes.func.isRequired,
 }
 
 export default Formulario
