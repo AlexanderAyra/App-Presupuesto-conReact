@@ -6,6 +6,12 @@ function App() {
 	const [presupuesto, setPresupuesto] = useState(0)
 	const [restante, setRestante] = useState(0)
 	const [showPregunta, updatePregunta] = useState(true)
+	const [gastos, setGastos] = useState([])
+
+	const addGasto = (gasto) => {
+		setGastos([...gastos, gasto])
+		console.log(gastos)
+	}
 
 	return (
 		<div className='container'>
@@ -21,7 +27,7 @@ function App() {
 					) : (
 						<div className='row'>
 							<div className='one-half column'>
-								<Formulario />
+								<Formulario addGasto={addGasto} />
 							</div>
 							<div className='one-half column'>2</div>
 						</div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { getId } from '../utils'
 import Error from './Error'
 
-const Formulario = () => {
+const Formulario = ({ addGasto }) => {
 	const [name, setName] = useState('')
 	const [cantidad, setCantidad] = useState(0)
 	const [error, setError] = useState(false)
@@ -34,11 +34,14 @@ const Formulario = () => {
 			id: getId(),
 		}
 
-		console.log(gasto)
-
 		// pasar el gasto
 
+		addGasto(gasto)
+
 		// resetear el form
+
+		setName('')
+		setCantidad(0)
 	}
 
 	return (
