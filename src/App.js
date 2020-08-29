@@ -21,7 +21,7 @@ function App() {
 		}
 
 		setCrearGasto(false)
-	}, [gasto])
+	}, [creargasto, gasto, gastos, restante])
 
 	return (
 		<div className='container'>
