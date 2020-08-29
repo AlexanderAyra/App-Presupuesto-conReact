@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Error from './Error'
 
 const Pregunta = () => {
 	const [cantidad, setCantidad] = useState(0)
@@ -13,12 +14,11 @@ const Pregunta = () => {
 
 		// Validar
 		if (cantidad < 1 || isNaN(cantidad)) {
-            setError(true)
-            return
-        }
-        
-        setError(false)
+			setError(true)
+			return
+		}
 
+		setError(false)
 
 		// si se pasa la validacion
 	}
@@ -27,7 +27,7 @@ const Pregunta = () => {
 		<div>
 			<h2>Coloca tu Presupuesto</h2>
 
-            {error ? : null}
+			{error ? <Error mensaje='El presupuesto es incorecto' /> : null}
 
 			<form onSubmit={addPresupuesto}>
 				<input
