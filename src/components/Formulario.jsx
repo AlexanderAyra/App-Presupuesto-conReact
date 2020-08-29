@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { getId } from '../utils'
 import Error from './Error'
 
 const Formulario = () => {
@@ -26,6 +27,14 @@ const Formulario = () => {
 		setError(false)
 
 		// construir el gasto
+
+		const gasto = {
+			nombre: name,
+			cantidad,
+			id: getId(),
+		}
+
+		console.log(gasto)
 
 		// pasar el gasto
 
